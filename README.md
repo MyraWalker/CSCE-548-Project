@@ -1,2 +1,2 @@
-# CSCE-548---Project
+# CSCE-548-Project
 Full Stack Application Development
