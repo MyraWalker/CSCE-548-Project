@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="BodySculptApp/BodySculptApp.vcxproj" Id="50c1f331-f79d-48a0-a9c3-ed05f94cee6a" />
+</Solution>

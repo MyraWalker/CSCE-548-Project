@@ -1,0 +1,19 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output
+x64/
+Debug/
+Release/
+*.exe
+*.dll
+*.pdb
+
+# IntelliSense / precompiled headers
+*.ipch
+
+
