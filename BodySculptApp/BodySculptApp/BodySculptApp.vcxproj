@@ -132,12 +132,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BodySculptApp.cpp" />
+    <ClCompile Include="MealDAL.cpp" />
+    <ClCompile Include="MealItemDAL.cpp" />
     <ClCompile Include="UserDAL.cpp" />
+    <ClCompile Include="WorkoutDAL.cpp" />
+    <ClCompile Include="WorkoutEntryDAL.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Db.h" />
+    <ClInclude Include="Meal.h" />
+    <ClInclude Include="MealDAL.h" />
+    <ClInclude Include="MealItem.h" />
+    <ClInclude Include="MealItemDAL.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="UserDAL.h" />
+    <ClInclude Include="Workout.h" />
+    <ClInclude Include="WorkoutDAL.h" />
+    <ClInclude Include="WorkoutEntry.h" />
+    <ClInclude Include="WorkoutEntryDAL.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

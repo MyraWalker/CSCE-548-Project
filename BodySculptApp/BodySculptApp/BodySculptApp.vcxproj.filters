@@ -33,6 +33,18 @@
     <ClCompile Include="UserDAL.cpp">
       <Filter>src\dal</Filter>
     </ClCompile>
+    <ClCompile Include="MealDAL.cpp">
+      <Filter>src\dal</Filter>
+    </ClCompile>
+    <ClCompile Include="MealItemDAL.cpp">
+      <Filter>src\dal</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkoutDAL.cpp">
+      <Filter>src\dal</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkoutEntryDAL.cpp">
+      <Filter>src\dal</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Db.h">
@@ -42,6 +54,30 @@
       <Filter>src\models</Filter>
     </ClInclude>
     <ClInclude Include="UserDAL.h">
+      <Filter>src\dal</Filter>
+    </ClInclude>
+    <ClInclude Include="Meal.h">
+      <Filter>src\models</Filter>
+    </ClInclude>
+    <ClInclude Include="MealDAL.h">
+      <Filter>src\dal</Filter>
+    </ClInclude>
+    <ClInclude Include="MealItem.h">
+      <Filter>src\models</Filter>
+    </ClInclude>
+    <ClInclude Include="MealItemDAL.h">
+      <Filter>src\dal</Filter>
+    </ClInclude>
+    <ClInclude Include="Workout.h">
+      <Filter>src\models</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkoutDAL.h">
+      <Filter>src\dal</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkoutEntry.h">
+      <Filter>src\models</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkoutEntryDAL.h">
       <Filter>src\dal</Filter>
     </ClInclude>
   </ItemGroup>
