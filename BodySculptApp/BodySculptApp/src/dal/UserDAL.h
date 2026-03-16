@@ -1,8 +1,8 @@
 #pragma once
 #include <vector>
 #include <optional>
-#include "Db.h"
-#include "User.h"
+#include "../db/Db.h"
+#include "../models/User.h"
 
 class UserDAL {
 public:

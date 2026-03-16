@@ -1,5 +1,3 @@
-// MealDAL.cpp  (libpqxx 7+ compatible)
-
 #include "MealDAL.h"
 
 #include <pqxx/pqxx>
@@ -14,7 +12,6 @@ static Meal mealFromRow(const pqxx::row& r)
     m.meal_time = r["meal_time"].as<std::string>();
     m.meal_type = r["meal_type"].as<std::string>();
 
-    // notes is nullable
     if (r["notes"].is_null())
         m.notes = std::nullopt;
     else
@@ -39,7 +36,7 @@ int MealDAL::create(const Meal& m)
             m.user_id,
             m.meal_time,
             m.meal_type,
-            m.notes.has_value() ? m.notes.value() : nullptr
+            m.notes.value_or("")
         }
     ).one_row();
 
@@ -111,7 +108,7 @@ bool MealDAL::update(const Meal& m)
             m.user_id,
             m.meal_time,
             m.meal_type,
-            m.notes.has_value() ? m.notes.value() : nullptr,
+            m.notes.value_or(""),
             m.meal_id
         }
     );

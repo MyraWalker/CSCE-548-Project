@@ -132,24 +132,39 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BodySculptApp.cpp" />
-    <ClCompile Include="MealDAL.cpp" />
-    <ClCompile Include="MealItemDAL.cpp" />
-    <ClCompile Include="UserDAL.cpp" />
-    <ClCompile Include="WorkoutDAL.cpp" />
-    <ClCompile Include="WorkoutEntryDAL.cpp" />
+    <ClCompile Include="src\business\MealService.cpp" />
+    <ClCompile Include="src\business\UserService.cpp" />
+    <ClCompile Include="src\business\WorkoutService.cpp" />
+    <ClCompile Include="src\client\ApiClient.cpp" />
+    <ClCompile Include="src\client\ConsoleUI.cpp" />
+    <ClCompile Include="src\dal\MealDAL.cpp" />
+    <ClCompile Include="src\dal\MealItemDAL.cpp" />
+    <ClCompile Include="src\dal\UserDAL.cpp" />
+    <ClCompile Include="src\dal\WorkoutDAL.cpp" />
+    <ClCompile Include="src\dal\WorkoutEntryDAL.cpp" />
+    <ClCompile Include="src\services\HttpServer.cpp" />
+    <ClCompile Include="src\utils\Logger.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Db.h" />
-    <ClInclude Include="Meal.h" />
-    <ClInclude Include="MealDAL.h" />
-    <ClInclude Include="MealItem.h" />
-    <ClInclude Include="MealItemDAL.h" />
-    <ClInclude Include="User.h" />
-    <ClInclude Include="UserDAL.h" />
-    <ClInclude Include="Workout.h" />
-    <ClInclude Include="WorkoutDAL.h" />
-    <ClInclude Include="WorkoutEntry.h" />
-    <ClInclude Include="WorkoutEntryDAL.h" />
+    <ClInclude Include="src\business\MealService.h" />
+    <ClInclude Include="src\business\UserService.h" />
+    <ClInclude Include="src\business\WorkoutService.h" />
+    <ClInclude Include="src\client\ApiClient.h" />
+    <ClInclude Include="src\client\ConsoleUI.h" />
+    <ClInclude Include="src\dal\MealDAL.h" />
+    <ClInclude Include="src\dal\MealItemDAL.h" />
+    <ClInclude Include="src\dal\UserDAL.h" />
+    <ClInclude Include="src\dal\WorkoutDAL.h" />
+    <ClInclude Include="src\dal\WorkoutEntryDAL.h" />
+    <ClInclude Include="src\db\Db.h" />
+    <ClInclude Include="src\models\Meal.h" />
+    <ClInclude Include="src\models\MealItem.h" />
+    <ClInclude Include="src\models\User.h" />
+    <ClInclude Include="src\models\Workout.h" />
+    <ClInclude Include="src\models\WorkoutEntry.h" />
+    <ClInclude Include="src\services\httplib.h" />
+    <ClInclude Include="src\services\HttpServer.h" />
+    <ClInclude Include="src\utils\Logger.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

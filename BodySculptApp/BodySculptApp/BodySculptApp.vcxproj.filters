@@ -25,60 +25,117 @@
     <Filter Include="src\models">
       <UniqueIdentifier>{1759531b-0ce0-443a-81e3-68ca43d7e124}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\business">
+      <UniqueIdentifier>{3e39047a-c921-4e8d-9bce-b33671d78952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\services">
+      <UniqueIdentifier>{4b5de745-f66b-4968-b6a4-3500ab1c0b01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils">
+      <UniqueIdentifier>{7f78c78a-26fb-4126-ac28-f0a55f816f13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\client">
+      <UniqueIdentifier>{a7a9db95-0620-46c7-8124-6e5afb81bf7a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BodySculptApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UserDAL.cpp">
+    <ClCompile Include="src\dal\MealDAL.cpp">
       <Filter>src\dal</Filter>
     </ClCompile>
-    <ClCompile Include="MealDAL.cpp">
+    <ClCompile Include="src\dal\MealItemDAL.cpp">
       <Filter>src\dal</Filter>
     </ClCompile>
-    <ClCompile Include="MealItemDAL.cpp">
+    <ClCompile Include="src\dal\UserDAL.cpp">
       <Filter>src\dal</Filter>
     </ClCompile>
-    <ClCompile Include="WorkoutDAL.cpp">
+    <ClCompile Include="src\dal\WorkoutDAL.cpp">
       <Filter>src\dal</Filter>
     </ClCompile>
-    <ClCompile Include="WorkoutEntryDAL.cpp">
+    <ClCompile Include="src\dal\WorkoutEntryDAL.cpp">
       <Filter>src\dal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\client\ApiClient.cpp">
+      <Filter>src\client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\client\ConsoleUI.cpp">
+      <Filter>src\client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\services\HttpServer.cpp">
+      <Filter>src\services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\Logger.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\business\UserService.cpp">
+      <Filter>src\business</Filter>
+    </ClCompile>
+    <ClCompile Include="src\business\MealService.cpp">
+      <Filter>src\business</Filter>
+    </ClCompile>
+    <ClCompile Include="src\business\WorkoutService.cpp">
+      <Filter>src\business</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Db.h">
+    <ClInclude Include="src\db\Db.h">
       <Filter>src\db</Filter>
     </ClInclude>
-    <ClInclude Include="User.h">
+    <ClInclude Include="src\models\Meal.h">
       <Filter>src\models</Filter>
     </ClInclude>
-    <ClInclude Include="UserDAL.h">
-      <Filter>src\dal</Filter>
-    </ClInclude>
-    <ClInclude Include="Meal.h">
+    <ClInclude Include="src\models\MealItem.h">
       <Filter>src\models</Filter>
     </ClInclude>
-    <ClInclude Include="MealDAL.h">
-      <Filter>src\dal</Filter>
-    </ClInclude>
-    <ClInclude Include="MealItem.h">
+    <ClInclude Include="src\models\User.h">
       <Filter>src\models</Filter>
     </ClInclude>
-    <ClInclude Include="MealItemDAL.h">
-      <Filter>src\dal</Filter>
-    </ClInclude>
-    <ClInclude Include="Workout.h">
+    <ClInclude Include="src\models\Workout.h">
       <Filter>src\models</Filter>
     </ClInclude>
-    <ClInclude Include="WorkoutDAL.h">
-      <Filter>src\dal</Filter>
-    </ClInclude>
-    <ClInclude Include="WorkoutEntry.h">
+    <ClInclude Include="src\models\WorkoutEntry.h">
       <Filter>src\models</Filter>
     </ClInclude>
-    <ClInclude Include="WorkoutEntryDAL.h">
+    <ClInclude Include="src\dal\MealDAL.h">
       <Filter>src\dal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dal\MealItemDAL.h">
+      <Filter>src\dal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dal\UserDAL.h">
+      <Filter>src\dal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dal\WorkoutDAL.h">
+      <Filter>src\dal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dal\WorkoutEntryDAL.h">
+      <Filter>src\dal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\business\UserService.h">
+      <Filter>src\business</Filter>
+    </ClInclude>
+    <ClInclude Include="src\services\HttpServer.h">
+      <Filter>src\services</Filter>
+    </ClInclude>
+    <ClInclude Include="src\services\httplib.h">
+      <Filter>src\services</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\Logger.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\client\ApiClient.h">
+      <Filter>src\client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\client\ConsoleUI.h">
+      <Filter>src\client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\business\MealService.h">
+      <Filter>src\business</Filter>
+    </ClInclude>
+    <ClInclude Include="src\business\WorkoutService.h">
+      <Filter>src\business</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
