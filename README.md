@@ -27,7 +27,7 @@ The application was developed using **C++**, with a web-based frontend built usi
 - **Programming Language:** C++
 - **Database:** PostgreSQL
 - **Database Tool:** pgAdmin
-- **Backend Framework:** Custom HTTP Server using `cpp-httplib`
+- **Backend Framework:** Custom HTTP Server using cpp-httplib
 - **Frontend:** HTML, CSS, JavaScript
 - **IDE:** Visual Studio Community 2026
 - **Version Control:** GitHub
@@ -124,26 +124,24 @@ Implements application logic:
 
 # 📁 Project Structure
 
-
-BodySculptApp/
-│
-├── frontend/
-│ ├── index.html
-│ ├── app.js
-│ └── style.css
-│
-├── src/
-│ ├── models/
-│ ├── dal/
-│ ├── business/
-│ ├── services/
-│ ├── client/
-│ ├── db/
-│ └── utils/
-│
-├── BodySculptApp.cpp
-└── README.md
-
+BodySculptApp/  
+│  
+├── frontend/  
+│   ├── index.html  
+│   ├── app.js  
+│   └── style.css  
+│  
+├── src/  
+│   ├── models/  
+│   ├── dal/  
+│   ├── business/  
+│   ├── services/  
+│   ├── client/  
+│   ├── db/  
+│   └── utils/  
+│  
+├── BodySculptApp.cpp  
+└── README.md  
 
 ---
 
@@ -151,204 +149,194 @@ BodySculptApp/
 
 ## 1. Clone Repository
 
-```bash
 git clone <repo-url>
-2. Install Prerequisites
 
-Visual Studio Community 2026 (with C++ workload)
+---
 
-PostgreSQL
+## 2. Install Prerequisites
 
-pgAdmin
+- Visual Studio Community 2026 (with C++ workload)
+- PostgreSQL
+- pgAdmin
+- Web browser (Chrome recommended)
 
-Web browser (Chrome recommended)
+---
 
-3. Setup Database
+## 3. Setup Database
 
-Open pgAdmin
+1. Open pgAdmin  
+2. Create a new database  
+3. Run SQL scripts:  
+   - Create tables  
+   - Insert test data  
+4. Verify tables exist:  
+   - users  
+   - meals  
+   - meal_items  
+   - workouts  
+   - workout_entries  
 
-Create a new database
+---
 
-Run SQL scripts:
-
-Create tables
-
-Insert test data
-
-Verify tables exist:
-
-users
-
-meals
-
-meal_items
-
-workouts
-
-workout_entries
-
-4. Configure Database Connection
+## 4. Configure Database Connection
 
 Update database credentials in:
 
 src/db/Db.h
 
 Include:
+- Database name  
+- Username  
+- Password  
+- Port (default: 5432)
 
-Database name
+---
 
-Username
+## 5. Build the Project
 
-Password
+1. Open solution file:
 
-Port (default: 5432)
+..\GitHub\CSCE-548-Project\BodySculptApp\BodySculptApp.slnx  
 
-5. Build the Project
+2. Build:
+- Build → Build Solution
 
-Open solution file:
+---
 
-..\GitHub\CSCE-548-Project\BodySculptApp\BodySculptApp.slnx
+## 6. Run Backend Server
 
-Build:
+1. Click Local Windows Debugger (green play button)  
+2. Backend console will appear  
+3. DO NOT exit the console (server will shut down)  
 
-Build → Build Solution
+### Verify Server
 
-6. Run Backend Server
+Open browser and go to:
 
-Click Local Windows Debugger (green play button)
+http://localhost:8080/health  
 
-Backend console will appear
+Expected response:
 
-Do NOT close the console (server will stop)
+{"success":true,"message":"Server is running"}
 
-7. Run Frontend
+---
 
-Open:
+## 7. Run Frontend Web Application
 
-..\GitHub\CSCE-548-Project\BodySculptApp\BodySculptApp\frontend\index.html
+Open browser and go to:
 
-in your browser (Chrome recommended).
+http://localhost:8080/ui/index.html  
 
-🧪 System Testing
+Expected result:
+- BodySculptApp web application loads successfully
+
+---
+
+# 🧪 System Testing
 
 The system was tested end-to-end:
 
-Frontend → API → Business → DAL → Database → back to Frontend
-✔ Create (Insert)
+Frontend → API → Business → DAL → Database → Frontend
 
-Add user via frontend
+## ✔ Create (Insert)
+- Add user via frontend  
+- Confirm database insertion  
 
-Confirm database insertion
+## ✔ Update
+- Modify user  
+- Confirm database update  
 
-✔ Update
+## ✔ Get All
+- Retrieve all records  
+- Display in frontend  
 
-Modify user
+## ✔ Get By ID
+- Retrieve single record  
+- Confirm accuracy  
 
-Confirm database update
+## ✔ Data Flow Validation
+- All layers communicate correctly  
+- Data persists in database  
 
-✔ Get All
+---
 
-Retrieve all records
-
-Display in frontend
-
-✔ Get By ID
-
-Retrieve single record
-
-Confirm accuracy
-
-✔ Data Flow Validation
-
-All layers communicate correctly
-
-Data persists in database
-
-🚀 Deployment Notes
+# 🚀 Deployment Notes
 
 To run successfully:
 
-Ensure PostgreSQL is running
+1. Ensure PostgreSQL is running  
+2. Start backend server  
+3. Open frontend via /ui/index.html  
+4. Perform CRUD operations  
 
-Start backend server
+---
 
-Open frontend
+# 🧠 AI Usage & Reflection
 
-Perform CRUD operations
-
-🧠 AI Usage & Reflection
-Prompt Used for Project 4
+## Prompt Used for Project 4
 
 The following prompt guided development:
 
-In previous chats labeled: Branch · Full Stack - CSCE 548 – Project, CSCE 548 - Project 2 Development, and CSCE 548 - Project 3 Web Client, you helped me complete phase 1-3 of my project...
+In previous chats labeled: Branch · Full Stack - CSCE 548 – Project, CSCE 548 - Project 2 Development, and CSCE 548 - Project 3 Web Client, you helped me complete phase 1-3...
 
-(Full prompt included in submission document)
+---
 
-Changes Made to AI-Generated Code
+## Changes Made to AI-Generated Code
 
-Fixed missing CRUD methods
+- Fixed missing CRUD methods  
+- Corrected database queries  
+- Adjusted project structure  
+- Improved API endpoints  
+- Fixed frontend-backend communication  
+- Resolved build/configuration issues  
+- Added logging functionality  
+- Verified full data flow  
 
-Corrected database queries
+---
 
-Adjusted project structure
-
-Improved API endpoints
-
-Fixed frontend-backend communication
-
-Resolved build/configuration issues
-
-Added logging functionality
-
-Verified full data flow
-
-Effectiveness of AI Tool
+## Effectiveness of AI Tool
 
 AI was effective for:
-
-Generating boilerplate code
-
-Structuring architecture
-
-Accelerating development
+- Generating boilerplate code  
+- Structuring architecture  
+- Accelerating development  
 
 Manual work required:
+- Debugging  
+- Integration  
+- Validation  
 
-Debugging errors
+---
 
-Integration across layers
+## Errors Encountered
 
-Validation and testing
+- Database connection issues  
+- Missing CRUD operations  
+- API routing issues  
+- Build configuration problems  
+- Frontend path issues  
 
-Errors Encountered
+---
 
-Database connection issues
+# ✅ Project Status
 
-Missing CRUD operations
+✔ Full n-tier architecture implemented  
+✔ Backend services hosted  
+✔ Frontend functional via /ui route  
+✔ End-to-end system tested  
+✔ Deployment documentation completed  
 
-API routing problems
+---
 
-Build configuration issues
+# 📎 Submission
 
-Frontend path issues
+- GitHub Repository (this repo)  
+- System Test & Deployment PDF submitted to Blackboard  
 
-✅ Project Status
+---
 
-✔ Full n-tier architecture implemented
-✔ Backend services hosted
-✔ Frontend functional
-✔ End-to-end system tested
-✔ Deployment documentation completed
+# 👩‍💻 Author
 
-📎 Submission
-
-GitHub Repository (this repo)
-
-System Test & Deployment PDF submitted to Blackboard
-
-👩‍💻 Author
-
-Myra Walker
-CSCE 548 – Full Stack Development
-Spring 2026
+Myra Walker  
+CSCE 548 – Full Stack Development  
+Spring 2026  
