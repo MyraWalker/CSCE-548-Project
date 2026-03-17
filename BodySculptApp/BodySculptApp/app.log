@@ -172,3 +172,5 @@ DETAIL:  Failing row contains (11, 6, 2026-03-16 09:18:00, Protein Shake, N/A).
 2026-03-16 19:16:24 [INFO] Fetching workout entries
 2026-03-16 19:16:24 [INFO] GET /workouts/{id}/entries
 2026-03-16 19:16:24 [INFO] Fetching workout entries
+2026-03-16 23:08:15 [INFO] Application starting
+2026-03-16 23:08:15 [INFO] Server started on port 8080
