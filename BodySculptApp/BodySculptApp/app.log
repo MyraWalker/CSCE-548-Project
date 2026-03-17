@@ -174,3 +174,51 @@ DETAIL:  Failing row contains (11, 6, 2026-03-16 09:18:00, Protein Shake, N/A).
 2026-03-16 19:16:24 [INFO] Fetching workout entries
 2026-03-16 23:08:15 [INFO] Application starting
 2026-03-16 23:08:15 [INFO] Server started on port 8080
+2026-03-17 15:47:20 [INFO] Application starting
+2026-03-17 15:47:20 [INFO] Server started on port 8080
+2026-03-17 15:58:53 [INFO] GET /health
+2026-03-17 16:00:00 [INFO] GET /users
+2026-03-17 16:00:00 [INFO] Fetching all users
+2026-03-17 16:02:37 [INFO] GET /users/{id}
+2026-03-17 16:02:37 [INFO] Fetching user by id
+2026-03-17 16:06:48 [INFO] GET /meal_items/{id}
+2026-03-17 16:06:48 [INFO] Fetching meal item by id
+2026-03-17 16:15:03 [INFO] PUT /meal_items/{id}
+2026-03-17 16:15:03 [INFO] Updating meal item
+2026-03-17 16:15:36 [INFO] PUT /meal_items/{id}
+2026-03-17 16:15:36 [INFO] Updating meal item
+2026-03-17 16:15:37 [INFO] PUT /meal_items/{id}
+2026-03-17 16:15:37 [INFO] Updating meal item
+2026-03-17 16:15:38 [INFO] PUT /meal_items/{id}
+2026-03-17 16:15:38 [INFO] Updating meal item
+2026-03-17 16:15:38 [INFO] PUT /meal_items/{id}
+2026-03-17 16:15:38 [INFO] Updating meal item
+2026-03-17 16:15:38 [INFO] PUT /meal_items/{id}
+2026-03-17 16:15:38 [INFO] Updating meal item
+2026-03-17 16:17:00 [INFO] PUT /meal_items/{id}
+2026-03-17 16:17:00 [INFO] Updating meal item
+2026-03-17 16:17:00 [INFO] GET /meal_items/{id}
+2026-03-17 16:17:00 [INFO] Fetching meal item by id
+2026-03-17 16:27:46 [INFO] GET /meals
+2026-03-17 16:27:46 [INFO] Fetching all meals
+2026-03-17 16:27:50 [INFO] GET /meals/{id}
+2026-03-17 16:27:50 [INFO] Fetching meal by id
+2026-03-17 16:36:29 [INFO] PUT /meals/{id}
+2026-03-17 16:36:29 [INFO] Updating meal
+2026-03-17 16:36:29 [INFO] GET /meals
+2026-03-17 16:36:29 [INFO] Fetching all meals
+2026-03-17 16:46:14 [INFO] GET /workouts/{id}/entries
+2026-03-17 16:46:14 [INFO] Fetching workout entries
+2026-03-17 16:46:28 [INFO] GET /workouts/{id}/entries
+2026-03-17 16:46:28 [INFO] Fetching workout entries
+2026-03-17 16:47:00 [INFO] GET /workouts/{id}
+2026-03-17 16:47:00 [INFO] Fetching workout by id
+2026-03-17 17:10:45 [INFO] PUT /workouts/{id}
+2026-03-17 17:10:45 [INFO] Updating workout
+2026-03-17 17:10:45 [INFO] GET /workouts
+2026-03-17 17:10:45 [INFO] Fetching all workouts
+2026-03-17 17:22:02 [INFO] PUT /users/{id}
+2026-03-17 17:22:02 [INFO] Updating user
+2026-03-17 17:22:02 [INFO] GET /users
+2026-03-17 17:22:02 [INFO] Fetching all users
+2026-03-17 18:00:29 [INFO] GET /health
