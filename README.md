@@ -3,7 +3,7 @@ Full Stack Application Development
 
 
 # Body Sculpt App – Phase 1
-CSCE 548 – Database Systems
+CSCE 548 – Building Secure Software
 Project 1: Database and Data Access Layer
 
 ## Overview
@@ -127,3 +127,335 @@ Visual Studio generated files (such as .vs/, .ipch/, and build outputs) are excl
 
 ## Author
 Myra Walker
+
+
+# Body Sculpt App – Phase 2
+CSCE 548 – Building Secure Software
+Project 2: Business Logic and Service Layers
+
+## Overview
+
+BodySculptApp is a backend fitness tracking application developed in C++ as part of **CSCE 548**. The system allows users to track workouts and meals in order to monitor their fitness progress.
+
+The application implements a layered architecture consisting of:
+
+- Models
+- Data Access Layer (DAL)
+- Business Logic Layer (Services)
+- HTTP Service Layer
+- Console Client for testing
+
+The backend communicates with a **PostgreSQL database** using **libpqxx** and exposes services through a lightweight HTTP server built with **cpp-httplib**.
+
+---
+
+## Features
+
+The application supports the following functionality:
+
+### User Management
+- Create users
+- Retrieve all users
+
+### Workout Tracking
+- Create workouts
+- Retrieve workouts
+- Create workout entries
+- Retrieve workout entries
+
+### Meal Tracking
+- Create meals
+- Retrieve meals
+- Create meal items
+- Retrieve meal items
+
+### Logging
+The system logs application events such as server startup and HTTP requests to:
+
+
+app.log
+
+
+---
+
+## Technologies Used
+
+- **C++**
+- **PostgreSQL**
+- **libpqxx** (PostgreSQL C++ client library)
+- **cpp-httplib** (HTTP server)
+- **Visual Studio**
+- **GitHub**
+
+---
+
+## Project Architecture
+
+
+src
+│
+├── business
+│ ├── UserService
+│ ├── WorkoutService
+│ └── MealService
+│
+├── dal
+│ ├── UserDAL
+│ ├── WorkoutDAL
+│ ├── WorkoutEntryDAL
+│ ├── MealDAL
+│ └── MealItemDAL
+│
+├── models
+│ ├── User
+│ ├── Workout
+│ ├── WorkoutEntry
+│ ├── Meal
+│ └── MealItem
+│
+├── server
+│ └── HttpServer
+│
+├── client
+│ ├── ApiClient
+│ └── ConsoleUI
+│
+└── utils
+└── Logger
+
+
+### Models
+Represent database entities such as users, workouts, meals, and related records.
+
+### Data Access Layer (DAL)
+Handles database queries and maps PostgreSQL results to C++ objects.
+
+### Business Layer
+Implements validation and business rules before calling the DAL.
+
+### HTTP Service Layer
+Exposes REST-style endpoints that interact with the business layer.
+
+### Console Client
+Provides a menu-driven interface for testing the services.
+
+---
+
+## HTTP Endpoints
+
+The application exposes the following endpoints:
+
+
+GET /users
+POST /users
+
+GET /workouts
+POST /workouts
+
+GET /workouts/{id}/entries
+POST /workouts/{id}/entries
+
+GET /meals
+POST /meals
+
+GET /meals/{id}/items
+POST /meals/{id}/items
+
+
+---
+
+## Database Tables
+
+The PostgreSQL database contains the following tables:
+
+### Users
+
+
+user_id
+first_name
+last_name
+email
+height_cm
+
+
+### Workouts
+
+
+workout_id
+user_id
+workout_date
+duration_min
+notes
+
+
+### Workout Entries
+
+
+entry_id
+workout_id
+exercise_name
+sets
+reps
+weight_kg
+
+
+### Meals
+
+
+meal_id
+user_id
+meal_time
+meal_type
+notes
+
+
+### Meal Items
+
+
+item_id
+meal_id
+food_name
+calories
+protein_g
+carbs_g
+fat_g
+
+
+---
+
+## Business Rules
+
+The service layer validates inputs before inserting records into the database.
+
+### User Rules
+- First name cannot be blank
+- Last name cannot be blank
+- Email must contain "@"
+- Height must be positive
+
+### Workout Rules
+- User must exist
+- Duration must be positive
+- Workout date must be provided
+
+### Workout Entry Rules
+- Workout ID must exist
+- Sets and reps must be positive
+- Weight cannot be negative
+
+### Meal Rules
+Allowed meal types:
+
+
+breakfast
+lunch
+dinner
+snack
+
+
+Additional rules:
+
+- Meal time must be provided
+- User ID must exist
+
+### Meal Item Rules
+- Food name cannot be blank
+- Nutrition values cannot be negative
+
+---
+
+## Running the Application
+
+### 1. Start the server
+
+Run the main application:
+
+
+BodySculptApp.exe
+
+
+The server starts on:
+
+
+http://localhost:8080
+
+
+---
+
+### 2. Use the Console Client
+
+The console client provides a menu for testing the services:
+
+
+Create User
+
+Get All Users
+
+Create Workout
+
+Get All Workouts
+
+Create Workout Entry
+
+Get Workout Entries
+
+Create Meal
+
+Get All Meals
+
+Create Meal Item
+
+Get Meal Items
+
+
+---
+
+## Logging
+
+Application events are logged to:
+
+
+app.log
+
+
+Example log output:
+
+
+[INFO] Application starting
+[INFO] Server started on port 8080
+[INFO] POST /users
+[INFO] GET /users
+[INFO] POST /workouts
+[INFO] POST /meals
+
+
+---
+
+## Testing
+
+All endpoints were tested using the console client. Testing included:
+
+- Creating records
+- Retrieving records
+- Verifying database inserts
+- Confirming logging output
+
+Screenshots of console tests and database results are included in the project submission.
+
+---
+
+## Repository
+
+This project is hosted on GitHub as part of the **CSCE 548 coursework**.
+
+
+https://github.com/
+<your-username>/CSCE-548-Project
+
+
+---
+
+## Author
+
+Myra Walker  
+CSCE 548 – Full Stack Development
