@@ -166,6 +166,11 @@
     <ClInclude Include="src\services\HttpServer.h" />
     <ClInclude Include="src\utils\Logger.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="frontend\app.js" />
+    <None Include="frontend\index.html" />
+    <None Include="frontend\style.css" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

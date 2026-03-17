@@ -1,11 +1,11 @@
 #pragma once
 #include <vector>
 #include <optional>
+#include "../db/Db.h"
+#include "../models/Meal.h"
 
-#include "Db.h"
-#include "Meal.h"
-
-class MealDAL {
+class MealDAL
+{
 public:
     explicit MealDAL(const Db& db) : db_(db) {}
 
@@ -18,4 +18,3 @@ public:
 private:
     const Db& db_;
 };
-

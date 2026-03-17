@@ -37,6 +37,9 @@
     <Filter Include="src\client">
       <UniqueIdentifier>{a7a9db95-0620-46c7-8124-6e5afb81bf7a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="frontend">
+      <UniqueIdentifier>{1ac36f25-961b-4a26-a0af-3c8b98f1d822}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BodySculptApp.cpp">
@@ -137,5 +140,16 @@
     <ClInclude Include="src\business\WorkoutService.h">
       <Filter>src\business</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="frontend\app.js">
+      <Filter>frontend</Filter>
+    </None>
+    <None Include="frontend\index.html">
+      <Filter>frontend</Filter>
+    </None>
+    <None Include="frontend\style.css">
+      <Filter>frontend</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Body Sculpt App - Phase 3 Client</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>Body Sculpt App</h1>
+        <p>Phase 3 Frontend Client for CSCE 548</p>
+    </header>
+
+    <nav class="tab-bar">
+        <button class="tab-button active" data-tab="users-tab">Users</button>
+        <button class="tab-button" data-tab="workouts-tab">Workouts</button>
+        <button class="tab-button" data-tab="workout-entries-tab">Workout Entries</button>
+        <button class="tab-button" data-tab="meals-tab">Meals</button>
+        <button class="tab-button" data-tab="meal-items-tab">Meal Items</button>
+    </nav>
+
+    <main>
+        <!-- USERS -->
+        <section id="users-tab" class="tab-content active">
+            <h2>Users</h2>
+
+            <div class="search-row">
+                <input type="number" id="user_id_search" placeholder="Enter User ID" />
+                <button onclick="getUserById()">Get By ID</button>
+                <button onclick="getAllUsers()">Get All</button>
+            </div>
+
+            <div class="form-grid">
+                <input type="hidden" id="user_id" />
+                <div>
+                    <label>First Name</label>
+                    <input type="text" id="user_first_name" />
+                </div>
+                <div>
+                    <label>Last Name</label>
+                    <input type="text" id="user_last_name" />
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type="email" id="user_email" />
+                </div>
+                <div>
+                    <label>Height (cm)</label>
+                    <input type="number" step="0.01" id="user_height_cm" />
+                </div>
+            </div>
+
+            <div class="button-row">
+                <button onclick="addUser()">Add User</button>
+                <button onclick="updateUser()">Update User</button>
+                <button onclick="deleteUser()">Delete User</button>
+                <button class="secondary" onclick="clearUserForm()">Clear Form</button>
+            </div>
+
+            <pre id="users_result" class="result-box"></pre>
+        </section>
+
+        <!-- WORKOUTS -->
+        <section id="workouts-tab" class="tab-content">
+            <h2>Workouts</h2>
+
+            <div class="search-row">
+                <input type="number" id="workout_id_search" placeholder="Enter Workout ID" />
+                <button onclick="getWorkoutById()">Get By ID</button>
+                <button onclick="getAllWorkouts()">Get All</button>
+            </div>
+
+            <div class="form-grid">
+                <input type="hidden" id="workout_id" />
+                <div>
+                    <label>User ID</label>
+                    <input type="number" id="workout_user_id" />
+                </div>
+                <div>
+                    <label>Workout Date</label>
+                    <input type="date" id="workout_date" />
+                </div>
+                <div>
+                    <label>Duration (min)</label>
+                    <input type="number" id="workout_duration_min" />
+                </div>
+                <div>
+                    <label>Notes</label>
+                    <input type="text" id="workout_notes" />
+                </div>
+            </div>
+
+            <div class="button-row">
+                <button onclick="addWorkout()">Add Workout</button>
+                <button onclick="updateWorkout()">Update Workout</button>
+                <button onclick="deleteWorkout()">Delete Workout</button>
+                <button class="secondary" onclick="clearWorkoutForm()">Clear Form</button>
+            </div>
+
+            <pre id="workouts_result" class="result-box"></pre>
+        </section>
+
+        <!-- WORKOUT ENTRIES -->
+        <section id="workout-entries-tab" class="tab-content">
+            <h2>Workout Entries</h2>
+
+            <div class="search-row">
+                <input type="number" id="workout_entry_id_search" placeholder="Enter Entry ID" />
+                <button onclick="getWorkoutEntryById()">Get By ID</button>
+                <button onclick="getAllWorkoutEntries()">Get All</button>
+            </div>
+
+            <div class="form-grid">
+                <input type="hidden" id="workout_entry_id" />
+                <div>
+                    <label>Workout ID</label>
+                    <input type="number" id="workout_entry_workout_id" />
+                </div>
+                <div>
+                    <label>Exercise Name</label>
+                    <input type="text" id="workout_entry_exercise_name" />
+                </div>
+                <div>
+                    <label>Sets</label>
+                    <input type="number" id="workout_entry_sets" />
+                </div>
+                <div>
+                    <label>Reps</label>
+                    <input type="number" id="workout_entry_reps" />
+                </div>
+                <div>
+                    <label>Weight (kg)</label>
+                    <input type="number" step="0.01" id="workout_entry_weight_kg" />
+                </div>
+            </div>
+
+            <div class="button-row">
+                <button onclick="addWorkoutEntry()">Add Workout Entry</button>
+                <button onclick="updateWorkoutEntry()">Update Workout Entry</button>
+                <button onclick="deleteWorkoutEntry()">Delete Workout Entry</button>
+                <button class="secondary" onclick="clearWorkoutEntryForm()">Clear Form</button>
+            </div>
+
+            <pre id="workout_entries_result" class="result-box"></pre>
+        </section>
+
+        <!-- MEALS -->
+        <section id="meals-tab" class="tab-content">
+            <h2>Meals</h2>
+
+            <div class="search-row">
+                <input type="number" id="meal_id_search" placeholder="Enter Meal ID" />
+                <button onclick="getMealById()">Get By ID</button>
+                <button onclick="getAllMeals()">Get All</button>
+            </div>
+
+            <div class="form-grid">
+                <input type="hidden" id="meal_id" />
+                <div>
+                    <label>User ID</label>
+                    <input type="number" id="meal_user_id" />
+                </div>
+                <div>
+                    <label>Meal Time</label>
+                    <input type="datetime-local" id="meal_time" />
+                </div>
+                <div>
+                    <label>Meal Type</label>
+                    <input type="text" id="meal_type" />
+                </div>
+                <div>
+                    <label>Notes</label>
+                    <input type="text" id="meal_notes" />
+                </div>
+            </div>
+
+            <div class="button-row">
+                <button onclick="addMeal()">Add Meal</button>
+                <button onclick="updateMeal()">Update Meal</button>
+                <button onclick="deleteMeal()">Delete Meal</button>
+                <button class="secondary" onclick="clearMealForm()">Clear Form</button>
+            </div>
+
+            <pre id="meals_result" class="result-box"></pre>
+        </section>
+
+        <!-- MEAL ITEMS -->
+        <section id="meal-items-tab" class="tab-content">
+            <h2>Meal Items</h2>
+
+            <div class="search-row">
+                <input type="number" id="meal_item_id_search" placeholder="Enter Meal Item ID" />
+                <button onclick="getMealItemById()">Get By ID</button>
+                <button onclick="getAllMealItems()">Get All</button>
+            </div>
+
+            <div class="form-grid">
+                <input type="hidden" id="meal_item_id" />
+                <div>
+                    <label>Meal ID</label>
+                    <input type="number" id="meal_item_meal_id" />
+                </div>
+                <div>
+                    <label>Food Name</label>
+                    <input type="text" id="meal_item_food_name" />
+                </div>
+                <div>
+                    <label>Calories</label>
+                    <input type="number" id="meal_item_calories" />
+                </div>
+                <div>
+                    <label>Protein (g)</label>
+                    <input type="number" step="0.01" id="meal_item_protein_g" />
+                </div>
+                <div>
+                    <label>Carbs (g)</label>
+                    <input type="number" step="0.01" id="meal_item_carbs_g" />
+                </div>
+                <div>
+                    <label>Fat (g)</label>
+                    <input type="number" step="0.01" id="meal_item_fat_g" />
+                </div>
+            </div>
+
+            <div class="button-row">
+                <button onclick="addMealItem()">Add Meal Item</button>
+                <button onclick="updateMealItem()">Update Meal Item</button>
+                <button onclick="deleteMealItem()">Delete Meal Item</button>
+                <button class="secondary" onclick="clearMealItemForm()">Clear Form</button>
+            </div>
+
+            <pre id="meal_items_result" class="result-box"></pre>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
