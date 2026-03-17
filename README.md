@@ -129,6 +129,8 @@ Visual Studio generated files (such as .vs/, .ipch/, and build outputs) are excl
 Myra Walker
 
 
+
+
 # Body Sculpt App – Phase 2
 CSCE 548 – Building Secure Software
 Project 2: Business Logic and Service Layers
@@ -459,3 +461,254 @@ https://github.com/
 
 Myra Walker  
 CSCE 548 – Full Stack Development
+
+
+
+
+# Body Sculpt App – Phase 3
+CSCE 548 – Building Secure Software
+Project 3: Backend and Frontend Expansion
+
+## **Overview**
+Phase 3 of the Body Sculpt App extends the project into a full-stack application by integrating a frontend user interface with the backend REST API developed in previous phases. This phase enables users to interact with the system through a web-based UI while maintaining proper communication with the backend and PostgreSQL database.
+
+---
+
+## **Objectives**
+- Integrate frontend with backend API
+- Enable full CRUD operations through a web interface
+- Ensure consistent JSON communication
+- Resolve CORS issues using same-origin setup
+- Validate end-to-end functionality (UI → Backend → Database)
+
+---
+
+## **Technologies Used**
+- **Frontend**
+  - HTML
+  - CSS
+  - JavaScript (Fetch API)
+
+- **Backend**
+  - C++
+  - cpp-httplib (HTTP server)
+
+- **Database**
+  - PostgreSQL
+
+- **Tools**
+  - Visual Studio
+  - pgAdmin
+  - Browser DevTools (Network/Console)
+
+---
+
+## **Project Structure**
+
+
+BodySculptApp/
+│
+├── src/
+│ ├── business/
+│ ├── data/
+│ ├── models/
+│ ├── services/
+│ ├── utils/
+│ └── client/
+│
+├── frontend/
+│ ├── index.html
+│ ├── style.css
+│ └── app.js
+│
+├── app.log
+└── README.md
+
+
+---
+
+## **How It Works**
+
+### **Frontend**
+- Provides UI for interacting with the system
+- Sends HTTP requests using `fetch()`
+- Displays results from backend responses
+
+### **Backend**
+- Handles REST API endpoints
+- Processes requests and interacts with database
+- Returns JSON responses
+
+### **Database**
+- Stores all application data
+- Maintains relationships using foreign keys
+
+---
+
+## **Running the Application**
+
+### **1. Start Backend**
+- Open project in Visual Studio
+- Run using **Local Windows Debugger**
+- Server runs at:
+
+http://localhost:8080
+
+
+### **2. Open Frontend**
+
+http://localhost:8080/ui/index.html
+
+
+---
+
+## **API Endpoints**
+
+### **Users**
+- `GET /users`
+- `GET /users/{id}`
+- `POST /users`
+- `PUT /users/{id}`
+- `DELETE /users/{id}`
+
+### **Workouts**
+- `GET /workouts`
+- `GET /workouts/{id}`
+- `POST /workouts`
+- `PUT /workouts/{id}`
+- `DELETE /workouts/{id}`
+
+### **Workout Entries**
+- `GET /workouts/{id}/entries`
+- `POST /workouts/{id}/entries`
+
+### **Meals**
+- `GET /meals`
+- `GET /meals/{id}`
+- `POST /meals`
+- `PUT /meals/{id}`
+- `DELETE /meals/{id}`
+
+### **Meal Items**
+- `GET /meals/{id}/items`
+- `GET /meal_items/{id}`
+- `POST /meals/{id}/items`
+- `PUT /meal_items/{id}`
+- `DELETE /meal_items/{id}`
+
+---
+
+## **Frontend–Backend Integration**
+
+- Frontend is served through backend at `/ui`
+- This ensures **same-origin requests**
+- Eliminates CORS errors
+- Uses JSON for all request/response data
+
+Example:
+```javascript
+fetch("/users", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(userData)
+});
+Features Implemented
+Users
+
+Create, read, update, delete users
+
+Workouts
+
+Manage workouts linked to users
+
+Workout Entries
+
+Add and retrieve workout entries
+
+Meals
+
+Manage meals linked to users
+
+Meal Items
+
+Add, update, delete meal items
+
+Testing
+Testing Order
+
+Users
+
+Workouts
+
+Workout Entries
+
+Meals
+
+Meal Items
+
+Validation Methods
+
+Frontend UI actions
+
+Backend logs (app.log)
+
+PostgreSQL database verification
+
+Browser DevTools (Network tab)
+
+Issues Encountered & Solutions
+CORS Errors
+
+Problem: "Failed to fetch"
+
+Solution: Serve frontend via backend (/ui route)
+
+File Path Issues
+
+Problem: Frontend files not found
+
+Solution: Corrected absolute file path
+
+404 Errors
+
+Problem: Incorrect routes or file names
+
+Solution: Standardized endpoint and file paths
+
+JSON Mismatch
+
+Problem: Field inconsistencies
+
+Solution: Matched frontend/backend field names
+
+Results
+
+Full frontend-backend integration achieved
+
+All CRUD operations working through UI
+
+Data correctly stored and retrieved from database
+
+No runtime or communication errors
+
+Future Improvements
+
+Add authentication/login system
+
+Improve UI/UX design
+
+Add input validation
+
+Implement filtering and search
+
+Deploy application to cloud
+
+Notes
+
+Ensure PostgreSQL is running before starting backend
+
+Use correct URL:
+
+http://localhost:8080/ui/index.html
+
+Avoid using .htm (must be .html)
